@@ -1,0 +1,13 @@
+# LaTeX 构建产物
+report/*.aux
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/*.xdv
+report/*.synctex.gz
+report/*.toc
+
+# Python 缓存
+__pycache__/
+*.pyc

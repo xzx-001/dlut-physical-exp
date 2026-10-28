@@ -1,0 +1,207 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper,fontset=windows]{ctexart}
+\setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold=1.8]
+\setCJKfamilyfont{zhhei}{SimHei}[AutoFakeBold=1.8]
+% ── 中文标点禁则：行末半角 + 禁止标点出现在行首 ──
+\xeCJKsetup{PunctStyle=hangmobanjiao}
+
+% ── 页面布局 ──
+\usepackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry}
+
+% ── 数学 ──
+\usepackage{amsmath, amssymb}
+\usepackage{physics}
+
+% ── 图表 ──
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{multirow}
+
+% ── 行距 ──
+\usepackage{setspace}
+\setstretch{1.25}
+\setlength{\emergencystretch}{2em}
+
+% ── 页眉页脚 ──
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\songti\zihao{5} 物理创新实验报告}
+\fancyfoot[C]{\songti\zihao{-5} \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{15pt}
+
+% ── 超链接 ──
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black}
+
+% ── 首行缩进 ──
+\usepackage{indentfirst}
+
+\ctexset{
+  section = {
+    format = \heiti\zihao{-3}\centering,
+    beforeskip = 1.5ex plus 0.3ex minus 0.2ex,
+    afterskip = 1.0ex plus 0.2ex minus 0.2ex,
+  },
+  subsection = {
+    format = \heiti\zihao{-4}\raggedright,
+    beforeskip = 1.0ex plus 0.2ex minus 0.2ex,
+    afterskip = 0.8ex plus 0.2ex minus 0.2ex,
+  },
+  subsubsection = {
+    format = \heiti\zihao{-4}\raggedright,
+    beforeskip = 0.8ex plus 0.2ex minus 0.2ex,
+    afterskip = 0.5ex plus 0.1ex minus 0.1ex,
+  },
+}
+
+\graphicspath{{figures/}}
+\captionsetup{font=small, labelsep=quad}
+
+\begin{document}
+
+% ============================================================
+% 封面
+% ============================================================
+\begin{titlepage}
+\begin{center}
+\vspace*{2.5cm}
+
+{\heiti\zihao{2} 大连理工大学}
+
+\vspace{0.8cm}
+
+{\heiti\zihao{-0} 物理创新实验报告}
+
+\vspace{3.0cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\large
+\begin{tabular}{>{\heiti}l<{\songti}>{\large\songti}c}
+  实验题目：& \underline{\makebox[11.1cm]{基于原子力显微镜的光盘表面沟槽形貌测量}} \\[0.6cm]
+  学院（系）：& \underline{\makebox[11.1cm]{物理学院}} \\[0.6cm]
+  专\hspace{2em}业：& \underline{\makebox[11.1cm]{应用物理学}} \\[0.6cm]
+  完成日期：& \underline{\makebox[11.1cm]{\today}} \\
+\end{tabular}
+\end{center}
+\end{center}
+\end{titlepage}
+
+% ============================================================
+% 摘要
+% ============================================================
+\setcounter{page}{1}
+\section*{\heiti\zihao{-3}\centering 摘要}
+
+\vspace{0.3cm}
+
+\songti\zihao{-4}
+\setstretch{1.25}
+
+本实验用接触模式原子力显微镜（CSPM5500，$10\,\mu\mathrm{m}\times10\,\mu\mathrm{m}$ 视场，$1024\times1024$ 点）测量了三张不同光盘的表面形貌，对形貌、误差信号与横向力三个通道的数据建立了完整的离线处理链，并给出沟槽周期、峰谷深度与面粗糙度的定量结果。三张光盘的沟槽周期分别为 $2170\pm4$、$2143\pm7$ 与 $1090\pm2$~nm，逐行峰谷深度分别为 55.2、60.4 与 93.4~nm，整平后面粗糙度 $S_q$ 为 20.3、19.9 与 31.0~nm。前两张光盘的周期相差 0.25\%，属同一规格；若按 CD 标准道距 1600~nm 标定，则扫描横向尺度因子为 1.34，据此第三张光盘修正后的周期为 792~nm，与 DVD 道距 740~nm 相差 7.0\%，三张光盘可判为两张 CD 类与一张 DVD 类。图像中条纹相对扫描轴存在 $8.1^\circ$ 与 $-13.2^\circ$ 的倾斜，直接沿慢扫方向平均会把条纹抹平（第三张的剖面幅度由 30.7~nm 降至 2.2~nm），行程对齐后平均剖面的信噪比提高一个量级以上。整平前后行均值的变化表明三组数据均无明显的扫描线伪迹，误差信号与横向力通道给出的信息与形貌通道一致。本实验还给出扫描器横向标定的不确定度对周期测量的影响，以及探针卷积使深度读数偏小的量级估计。
+
+\vspace{0.5cm}
+\noindent{\heiti\zihao{-4}\bfseries 关键词：}\songti\zihao{-4}原子力显微镜；光盘沟槽；粗糙度；横向标定；探针卷积
+
+\newpage
+
+% ============================================================
+% 引言
+% ============================================================
+\section*{引言}
+\addcontentsline{toc}{section}{引言}
+
+\songti\zihao{-4}
+\setstretch{1.25}
+
+扫描探针显微镜（scanning probe microscope, SPM）通过一根尖锐探针与样品表面的局域相互作用成像，其分辨率不取决于波长，而取决于探针尖端的尺寸与探针—样品间距的控制精度，因而在常规光学显微镜之外提供了一条达到原子量级分辨的途径。扫描隧道显微镜（scanning tunneling microscope, STM）于 1981 年问世，利用金属探针与导电样品之间的隧道电流成像\cite{binnig1982}；其局限在于样品必须导电，这使绝缘体与多数生物样品无法直接测量。原子力显微镜（atomic force microscope, AFM）于 1986 年提出，以探测微悬臂的形变代替隧道电流，把测量的物理量从电流换成力\cite{binnig1986}，从此 SPM 的适用范围扩展到导体、半导体与绝缘体。
+
+AFM 的核心是一枚末端带有针尖的微悬臂。针尖与样品距离很近时，两者之间的范德华力、静电力、排斥力等随距离急剧变化；在接触模式下，悬臂因受到排斥力而弯曲，弯曲量由光杠杆法测得，反馈回路通过压电扫描器的 $z$ 向伸缩把弯曲量维持在设定值（参考点），于是扫描过程中 $z$ 向电压的变化就记录了表面高度。由于反馈不可能无限快，实际偏转与参考点之间总存在残差，这个残差本身就是一路信号——误差信号，它反映的是表面高度在扫描方向上的变化率，对台阶、边缘与高频形貌比形貌通道更敏感。悬臂除弯曲之外还会因摩擦力发生扭转，扭转量对应横向力信号。形貌、误差与横向力三路信号同时采集，互为补充。
+
+光盘是 AFM 测量的理想样品。压制或刻录光盘的聚碳酸酯基片上预刻有螺旋状沟槽（pre-groove），沟槽周期由格式标准严格规定，CD 类为 1600~nm、DVD 类为 740~nm、蓝光为 320~nm；这一周期在毫米到厘米尺度上高度一致，因此既可以用作衡量扫描器横向尺度的内参照，也是检查 AFM 成像与处理流程是否正常的天然标尺。光盘又是有机染料记录层的载体，其表面起伏与记录层的涂布质量直接相关，工业上早有用 AFM 检测光盘表面微结构、评估质量控制的研究\cite{sun2005,xu2008,jing2003}。在这种意义上，用 AFM 观察光盘表面兼有两重意义：一方面检验仪器与数据处理流程，另一方面获得光盘本身的结构参数。
+
+本实验用接触模式 AFM 测量三张不同光盘的表面，实验内容包括：采集形貌、误差信号与横向力三路图像；对形貌图作消除扫描线、面整平、对比度调整等处理；生成三维形貌图并测量剖面线；定量给出沟槽周期、峰谷深度与面粗糙度参数；结合扫描器标定讨论测量结果的可信度与不确定度来源。实验同时考察成像参数（反馈增益、参考点、信号增益）对图像质量的影响，以及扫描线、针尖卷积、条纹倾斜等常见伪迹的判据。
+
+% ============================================================
+% 实验原理与方法
+% ============================================================
+\section{实验原理与方法}
+
+\subsection{原子力显微镜的成像原理与工作模式}
+
+微悬臂—针尖系统是 AFM 的“传感器”。针尖与样品接近时，二者之间的相互作用力使悬臂发生形变，形变量与力成正比，比例系数为悬臂的力常数 $k$。以常见的硅或氮化硅悬臂为例，$k$ 在 $0.01\sim 50~\mathrm{N/m}$ 量级，作用力在 $10^{-11}\sim10^{-7}~\mathrm{N}$ 量级，对应的形变量在纳米到几十纳米，需要借助光杠杆放大才能测出：一束激光聚焦在悬臂背面，反射光落入四象限光电探测器，悬臂弯曲 $1~\mathrm{nm}$ 可使光斑在探测器上移动数十纳米，放电信号的差值与形变量近似成正比。
+
+扫描时压电扫描器带动针尖（或样品）在 $x$、$y$ 向作栅格扫描，快扫方向（本文的 $x$）每行往返一次，慢扫方向（本文的 $y$）逐行推进。反馈回路由参考点、比例增益与积分增益三个参数决定：参考点给出反馈要维持的相互作用大小（国产软件中记为 Ref，本实验取 0.30），比例增益决定对当前误差的补偿快慢，积分增益补偿累积的系统误差\cite{manual_cspm}。二者越大反馈越灵敏，但过大时会引入振荡；扫描频率为探针在快扫方向每秒往返的行数，本实验取 1.0~Hz，处于该仪器推荐的 1.0--2.0~Hz 区间。
+
+按针尖与样品的接触状态，AFM 分为三种模式。接触模式（contact mode）使针尖始终与样品接触，位于排斥力区，反馈量是悬臂偏转量，横向分辨率高、扫描速度快，但法向力与摩擦力对软样品损伤大，且容易把样品表面推着走。轻敲模式（tapping mode）使悬臂在其共振频率附近振动，针尖周期性地敲击表面，反馈量是振幅，剪切力小、适合软样品，但成像速度较慢。非接触模式（non-contact mode）在吸引力区工作，探针与样品不接触，分辨率略低，受吸附层影响大。本实验的样品为硬度较高的聚碳酸酯光盘，选用接触模式。
+
+\subsection{实验装置与样品}
+
+仪器为本原纳米仪器 CSPM5500 扫描探针显微镜（软件版本 V4.60，序列号 CSPM5500-200906A），配 S8163 扫描器。扫描器的最大扫描范围由四个方向伸缩系数中的最小值决定，手册给出的关系为
+\begin{equation}
+L_{\max} = \min\left(k_{X}^{\text{fast}},\,k_{Y}^{\text{fast}},\,k_{X}^{\text{slow}},\,k_{Y}^{\slow}\right)\times 360~\mathrm{V},
+\label{eq:maxscope}
+\end{equation}
+其中伸缩系数的单位为 $\mathrm{nm/V}$。本机实测的四个系数分别为 251.087、251.943、318.454 与 317.546~nm/V，代入式~\eqref{eq:maxscope} 得 $L_{\max}=90\,391~\mathrm{nm}$，与软件读数一致，说明扫描器的参数设置自洽。
+
+样品为三张不同的光盘，依次记为 cd1、cd2 与 cd3，型号未作记录。三张光盘均在室温环境下直接置于样品台上测量，未作镀膜或其他前处理。所用探针型号记录为 N/A，无法追溯到具体批次，这一点在后文讨论探针卷积时作为不确定度来源之一。
+
+\subsection{扫描参数}
+
+三次测量的扫描参数见表~\ref{tab:params}。三组的视场均为 $10\,\mu\mathrm{m}$、采样点数均为 $1024\times1024$，对应像素尺度 9.77~nm。差异在于：cd3 的信号增益降至 5.0、满量程高度扩大到 147.39~nm，另两组的信号增益为 7.0、满量程为 105.28~nm；灵敏度的标定值依次为 9.201、9.890 与 10.118。参考点、扫描频率、比例与积分增益三组一致。
+
+\begin{table}[H]
+\centering
+\caption{三次测量的扫描参数（由 \texttt{.csm} 文件头读出）}
+\label{tab:params}
+\small
+\setstretch{1.0}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+项目 & cd1 & cd2 & cd3 \\
+\midrule
+采集时间 & 09:47 & 10:13 & 10:43 \\
+视场 / nm & 10000 & 10000 & 10000 \\
+采样点数 & $1024^2$ & $1024^2$ & $1024^2$ \\
+像素尺度 / nm & 9.77 & 9.77 & 9.77 \\
+扫描频率 / Hz & 1.0 & 1.0 & 1.0 \\
+参考点 Ref & 0.30 & 0.30 & 0.30 \\
+比例增益 P.G. & 200 & 200 & 200 \\
+积分增益 I.G. & 200 & 200 & 200 \\
+信号增益 & 7.0 & 7.0 & 5.0 \\
+灵敏度 & 9.201 & 9.890 & 10.118 \\
+满量程高度 / nm & 105.28 & 105.28 & 147.39 \\
+$z$ 限幅（ZLimit）& 360 & 360 & 360 \\
+工作模式 & 接触 & 接触 & 接触 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{数据格式与处理流程}
+
+仪器导出的原始文件为 \texttt{.csm} 格式，每个文件 3.1~MB，实为一段 BMP 位图与一段文本参数的拼接：前 54 字节为标准 BMP 文件头与信息头（$1024\times1024$、24 位、无压缩），其后为按底行在前（bottom-up）排列的 BGR 像素，末尾约 1.25~KB 为 GBK 编码的参数块，以“键 = 值”的文本形式记录扫描参数。像素三字节中红色通道恒为零，绿色与蓝色通道分别存放 16 位原始量的高、低字节，故原始量与物理量的换算为
+\begin{equation}
+z = \frac{B + 256\,G}{65535}\times z_{\text{full}},
+\label{eq:decode}
+\end{equation}
+其中 $z_{\text{full}}$ 为文件头给出的满量程高度，形貌通道记录为 nm、误差与横向力通道记录为 V。
+
+配套的后处理软件 Imager 4.7 为 32 位 Windows 程序，无法在实验所用 Linux 环境下运行。本文按软件的算子定义自建处理流程，全部计算以 Python 实现，处理链与软件菜单的对应关系为：消除扫描线对应逐行一阶多项式减除，面整平对应全局二阶二维多项式拟合减除，剖面线与面粗糙度对应本文第~\ref{sec:rough} 节给出的定义。二阶面整平是软件手册建议的倾角校正方式，其理由是扫描面与被测面之间存在不可忽略的整体倾斜与弯曲，若不扣除，$S_q$ 等参数主要反映的是扫描几何而不是表面本身。
+
+由于扫描过程中条纹相对扫描轴并不严格平行，跨行平均之前必须先估计条纹倾角。本文用逐行离散傅里叶变换的相位斜率法：对每一行在主场频 $f_0$ 处作复投影 $\sum_j z_{ij}e^{-2\pi i f_0 j}$，其相位 $\varphi_i$ 随行号线性变化，斜率与每行水平位移 $\Delta x$ 的关系为
+\begin{equation}
+\frac{\mathrm{d}\varphi}{\mathrm{d}i} = -2\pi f_0 \Delta x ,
+\label{eq:tilt}
+\end{equation}
+据此得到 $\Delta x$ 后按行插值平移，使条纹与慢扫方向平行，再沿 $y$ 向平均得到高信噪比的平均剖面。该法的精度高于二维傅里叶谱峰位法，后者的频率分辨率受视场限制为 $1/10\,\mu\mathrm{m}^{-1}$。
+
+% ============================================================
+% 结果与讨论（part2 拼接）
+% ============================================================
