@@ -6,7 +6,8 @@
 
 | # | 实验名称 | 分支（点击进入） | 内容 |
 |:--|:--|:--|:--|
-| 1 | 基于原子力显微镜的光盘表面沟槽形貌测量 | [`afm-cd-groove-morphology`](https://github.com/xzx-001/dlut-physical-exp/tree/afm-cd-groove-morphology) | `report/`（XeLaTeX 源 + 24 页 PDF）· `data/`（三张光盘 .csm 原始扫描）· `scripts/`（解析与处理链）· `figures/` · `results/` |
+| 1 | 基于原子力显微镜的光盘表面沟槽形貌测量 | [`afm-cd-groove-morphology`](https://github.com/xzx-001/dlut-physical-exp/tree/afm-cd-groove-morphology) | `report/`（XeLaTeX 源 + 26 页 PDF）· `data/`（三张光盘 .csm 原始扫描）· `scripts/`（解析与处理链）· `figures/` · `results/` |
+| 2 | 光纤传感综合实验：FBG 位移（应变）与温度标定 | [`fbg-fiber-sensing-calibration`](https://github.com/xzx-001/dlut-physical-exp/tree/fbg-fiber-sensing-calibration) | `data/`（解调仪导出的原始 CSV 5 份）· `scripts/`（分析、绘图与模拟脚本 12 个）· `README.md`（结果表与复现步骤；报告正文不在本分支） |
 
 ## 使用方式
 
@@ -28,9 +29,10 @@ git switch afm-cd-groove-morphology
 | 分支 | 实验 |
 |:--|:--|
 | `afm-cd-groove-morphology` | AFM 光盘表面沟槽形貌测量 |
+| `fbg-fiber-sensing-calibration` | 光纤传感综合实验：FBG 位移（应变）与温度标定 |
 
 ## 说明
 
 - 各实验分支彼此独立、历史互不干扰；`main` 不含实验数据，只维护本索引。
-- 报告已做去标识化处理（不含姓名、学号等个人信息）；`.csm` 数据为仪器原始导出，未做改动。
-- 每个实验的数据都可由该分支 `scripts/` 下的脚本复现，编译与复现步骤见对应 `report/`。
+- 实验内容已做去标识化处理（不含姓名、学号等个人信息）；原始数据为仪器或解调仪软件导出，未做改动。
+- 每个实验的数据都可由该分支 `scripts/` 下的脚本复现；若该分支含 `report/`，编译与复现步骤见其目录下 README。
