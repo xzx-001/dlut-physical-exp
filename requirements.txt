@@ -1,0 +1,8 @@
+# 报告正文数值与插图的可复现环境（Python 3.13.5 实测）
+# 安装：python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+numpy==2.5.1
+scipy==1.18.1
+matplotlib==3.11.0
+
+# 仅用于读取扫描版实验记录表（OCR），不参与正文数值计算
+# rapidocr-onnxruntime==1.2.3

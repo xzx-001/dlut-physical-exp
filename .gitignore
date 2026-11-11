@@ -1,0 +1,7 @@
+# 运行产物（由 scripts/plot.py 重建，不入库）
+figures/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
