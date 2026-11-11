@@ -1,0 +1,9 @@
+# 运行产物
+output/
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+# 系统杂项
+.DS_Store
+Thumbs.db
