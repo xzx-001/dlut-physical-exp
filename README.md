@@ -124,6 +124,3 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 - **缺失的采集参数**：采集时间、物镜倍数、光斑尺寸与到达样品功率均未记录；激发波长 532 nm 由实验记录确认。
 - 数据来自课程实验当场采集，仅用于教学与方法演示。
 
-## License
-
-待定（作者可选 MIT 或 CC BY 4.0）。
