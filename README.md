@@ -8,6 +8,7 @@
 |:--|:--|:--|:--|
 | 1 | 基于原子力显微镜的光盘表面沟槽形貌测量 | [`afm-cd-groove-morphology`](https://github.com/xzx-001/dlut-physical-exp/tree/afm-cd-groove-morphology) | `report/`（XeLaTeX 源 + 26 页 PDF）· `data/`（三张光盘 .csm 原始扫描）· `scripts/`（解析与处理链）· `figures/` · `results/` |
 | 2 | 光纤传感综合实验：FBG 位移（应变）与温度标定 | [`fbg-fiber-sensing-calibration`](https://github.com/xzx-001/dlut-physical-exp/tree/fbg-fiber-sensing-calibration) | `data/`（解调仪导出的原始 CSV 5 份）· `scripts/`（分析、绘图与模拟脚本 12 个）· `README.md`（结果表与复现步骤；报告正文不在本分支） |
+| 3 | PECVD 生长尝试与机械剥离石墨烯的拉曼光谱 | [`pecvd-graphene-raman`](https://github.com/xzx-001/dlut-physical-exp/tree/pecvd-graphene-raman) | `data/raw/`（4 条原始光谱）· `scripts/`（读谱、拟合、消融与绘图脚本 4 个）· `results/`（summary.json / ablation.json / arrays.npz）· `README.md`（结果表与复现步骤；报告正文不在本分支） |
 
 ## 使用方式
 
@@ -30,6 +31,7 @@ git switch afm-cd-groove-morphology
 |:--|:--|
 | `afm-cd-groove-morphology` | AFM 光盘表面沟槽形貌测量 |
 | `fbg-fiber-sensing-calibration` | 光纤传感综合实验：FBG 位移（应变）与温度标定 |
+| `pecvd-graphene-raman` | PECVD 生长尝试与机械剥离石墨烯的拉曼光谱 |
 
 ## 说明
 
